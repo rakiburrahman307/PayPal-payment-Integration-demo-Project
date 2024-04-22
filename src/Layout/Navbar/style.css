@@ -1,0 +1,14 @@
+.active{
+    border-bottom: 1px solid black;
+    border-radius: none;
+    -webkit-border-radius: none;
+    -moz-border-radius: none;
+    -ms-border-radius: none;
+    -o-border-radius: none;
+}
+
+:root{
+    --n: none;
+}
+
+  
