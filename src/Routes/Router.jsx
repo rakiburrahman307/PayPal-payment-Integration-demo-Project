@@ -10,7 +10,6 @@ import Details from "../Pages/Detail/Details";
 import Profile from "../Pages/Profile/Profile";
 import Order from "../Pages/Order/Order";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,13 +21,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <PrivateRoute><Profile /></PrivateRoute>
-        ,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/orders",
-        element: <PrivateRoute><Order /></PrivateRoute>
-        ,
+        element: (
+          <PrivateRoute>
+            <Order />
+          </PrivateRoute>
+        ),
       },
       {
         path: "*",

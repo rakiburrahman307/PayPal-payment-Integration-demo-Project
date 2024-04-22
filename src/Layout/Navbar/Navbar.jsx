@@ -56,8 +56,12 @@ const Navbar = () => {
             >
               {/* Profile Menu Item */}
               <h2 className='fond-bold ml-3 my-2'>{user.displayName}</h2>
-              <li><Link to='/profile'>Profile</Link></li>
-              <li><Link to='/orders'>Orders</Link></li>
+              <li>
+                <Link to='/profile'>Profile</Link>
+              </li>
+              <li>
+                <Link to='/orders'>Orders</Link>
+              </li>
               <li>
                 <button
                   className='hover:bg-red-500 hover:text-white'
@@ -80,14 +84,26 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`${
-          isOpen ? 'visible' : 'invisible'
+          isOpen ? "visible" : "invisible"
         } z-50 flex flex-col justify-center items-center min-h-screen absolute top-20 left-0 min-w-full bg-black transition-transform duration-500 ease-in-out`}
       >
         {/* Nav ber Links For Mobile Size  */}
-        <NavLink onClick={toggleMenu} to='/' className={`text-white p-4 ${isOpen ? 'opacity-100 duration-500' : 'opacity-0 duration-200'}`}>
+        <NavLink
+          onClick={toggleMenu}
+          to='/'
+          className={`text-white p-4 ${
+            isOpen ? "opacity-100 duration-500" : "opacity-0 duration-200"
+          }`}
+        >
           Home
         </NavLink>
-        <NavLink onClick={toggleMenu} to='/profile' className={`text-white p-4 ${isOpen ? 'opacity-100 duration-500' : 'opacity-0 duration-200'}`}>
+        <NavLink
+          onClick={toggleMenu}
+          to='/profile'
+          className={`text-white p-4 ${
+            isOpen ? "opacity-100 duration-500" : "opacity-0 duration-200"
+          }`}
+        >
           Profile
         </NavLink>
       </div>

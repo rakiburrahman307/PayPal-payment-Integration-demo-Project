@@ -37,7 +37,9 @@ const Details = () => {
             </span>
           </div>
           <div className='card-actions justify-end'>
-            <Link to={`/payment/${product?.id}`}><button className='btn btn-primary'>Buy Now</button></Link>
+            <Link to={`/payment/${product?.id}`}>
+              <button className='btn btn-primary'>Buy Now</button>
+            </Link>
           </div>
         </div>
       </div>
