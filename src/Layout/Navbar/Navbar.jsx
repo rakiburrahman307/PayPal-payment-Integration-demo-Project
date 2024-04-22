@@ -56,6 +56,8 @@ const Navbar = () => {
             >
               {/* Profile Menu Item */}
               <h2 className='fond-bold ml-3 my-2'>{user.displayName}</h2>
+              <li><Link to='/profile'>Profile</Link></li>
+              <li><Link to='/orders'>Orders</Link></li>
               <li>
                 <button
                   className='hover:bg-red-500 hover:text-white'
