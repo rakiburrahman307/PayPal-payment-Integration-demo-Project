@@ -6,8 +6,6 @@ import Signup from "../Layout/SignUp/Signup";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Payment from "../Pages/Payment/Payment";
-import PaymentSuccess from "../Pages/PaymentSuccess/PaymentSuccess";
-import PaymentFail from "../Pages/PaymentFail/PaymentFail";
 import Details from "../Pages/Detail/Details";
 
 const router = createBrowserRouter([
@@ -26,14 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
-      },
-      {
-        path: "/payment/success/:id",
-        element: <PaymentSuccess></PaymentSuccess>,
-      },
-      {
-        path: "/payment/fail/:id",
-        element: <PaymentFail></PaymentFail>,
       },
       {
         path: "/sign-up",
