@@ -8,6 +8,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Payment from "../Pages/Payment/Payment";
 import Details from "../Pages/Detail/Details";
 import Profile from "../Pages/Profile/Profile";
+import Order from "../Pages/Order/Order";
+
 
 const router = createBrowserRouter([
   {
@@ -20,7 +22,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <Profile />,
+        element: <PrivateRoute><Profile /></PrivateRoute>
+        ,
+      },
+      {
+        path: "/orders",
+        element: <PrivateRoute><Order /></PrivateRoute>
+        ,
       },
       {
         path: "*",
@@ -49,7 +57,6 @@ const router = createBrowserRouter([
         path: "/payment/:id",
         element: (
           <PrivateRoute>
-            {" "}
             <Payment></Payment>
           </PrivateRoute>
         ),
