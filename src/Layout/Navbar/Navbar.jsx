@@ -1,7 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
 import "./style.css";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import useAuth from "../../Hooks/useAuth";
 import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
@@ -41,7 +39,7 @@ const Navbar = () => {
           </NavLink>
         </ul>
       </div>
-      <ToastContainer />
+
       <div className='navbar-end'>
         {user ? (
           <div className='group dropdown dropdown-end'>
