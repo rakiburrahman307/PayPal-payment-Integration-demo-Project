@@ -16,7 +16,6 @@ const PaypalBtn = ({ totalPrice, product }) => {
   const { user } = useAuth();
   const navigate = useNavigate();
   const createOrder = () => {
-
     return fetch(
       "https://react-paypal-js-storybook.fly.dev/api/paypal/create-order",
       {
@@ -61,24 +60,31 @@ const PaypalBtn = ({ totalPrice, product }) => {
     )
       .then(response => response.json())
       .then(orderData => {
-        const handleOrder = async () => {
-          await setDoc(doc(db, "orderDetails", user?.uid), {
-            name: user?.displayName,
-            email: user?.email,
-            orderData,
-          });
-        };
-        handleOrder();
-        if (orderData?.status === "COMPLETED") {
+        try {
+          const handleOrder = async () => {
+            await setDoc(doc(db, "orderDetails", user?.uid), {
+              name: user?.displayName,
+              email: user?.email,
+              orderData,
+            });
+          };
+          handleOrder();
+          if (orderData?.status === "COMPLETED") {
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: `${product.title} purchased successfully`,
+              showConfirmButton: false,
+              timer: 1500,
+            });
+            navigate("/");
+          }
+        } catch (error) {
           Swal.fire({
-            position: "center",
-            icon: "success",
-            title: `${product.title} purchased successfully`,
-            showConfirmButton: false,
-            timer: 1500,
+            icon: "error",
+            title: "Oops...",
+            text: `Something went wrong! ${error.message}`,
           });
-
-          navigate("/");
         }
       });
   };

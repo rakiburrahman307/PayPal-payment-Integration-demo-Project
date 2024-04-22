@@ -1,4 +1,4 @@
-import Footer from "../Fotter/Footer";
+import Footer from "../Footer/Footer";
 import DemoProducts from "./DemoProducts";
 
 

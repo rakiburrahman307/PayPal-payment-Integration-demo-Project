@@ -25,7 +25,7 @@ const Details = () => {
         <div className='card-body'>
           <h2 className='card-title'>{product?.title}</h2>
 
-          <div className='flex flex-col items-start mb-36'>
+          <div className='flex flex-col items-start mb-28'>
             <p>{product?.brand}</p>
             <span className='bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 mt-1'>
               {product?.rating}
@@ -38,7 +38,9 @@ const Details = () => {
           </div>
           <div className='card-actions justify-end'>
             <Link to={`/payment/${product?.id}`}>
-              <button className='btn btn-primary'>Buy Now</button>
+              <button className='rounded-lg border-2 border-sky-500 px-8 py-3 text-xl text-sky-500 duration-200 hover:bg-sky-500 hover:text-white'>
+                Buy Now
+              </button>
             </Link>
           </div>
         </div>

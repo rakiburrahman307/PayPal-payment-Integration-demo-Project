@@ -6,10 +6,10 @@ const Footer = () => {
       <aside>
         <FaHubspot className='text-4xl'></FaHubspot>
         <p className='font-bold'>
-          UniStayHub <br />
-          Providing reliable Home Service
+          Demo <br />
+          Paypal Payment Demo
         </p>
-        <p>Copyright © 2023 - All right reserved</p>
+        <p>Copyright © 2024 - All right reserved</p>
       </aside>
       <nav>
         <div className='grid grid-flow-col gap-4'>
