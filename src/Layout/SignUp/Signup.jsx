@@ -1,6 +1,5 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import useAuth from "../../Hooks/useAuth";
 import { updateProfile } from "firebase/auth";
 import PageHelmet from "../../Hooks/pageHelmet";
@@ -25,11 +24,23 @@ const Signup = () => {
     const photoUrl = event.photoUrl;
 
     if (/^\w{1,5}$/.test(password)) {
-      toast.error("Password must be 6 characters");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must be 6 characters",
+      })
     } else if (/^[^A-Z]*$/.test(password)) {
-      toast.error("Password must one capital letter");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Password must one capital letter",
+      })
     } else if (/^[^\W_]*$/.test(password)) {
-      toast.error("Must have a special character");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Must have a special character",
+      })
     } else {
       createUser(email, password, name)
         .then(result => {
