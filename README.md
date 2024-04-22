@@ -47,7 +47,7 @@
 ## License
 
 This project is licensed under the [Paypal payment demo](LICENSE).
-This project live link [https://paypal-payment-demo.netlify.app](LInk).
+This project live link [https://paypal-payment-integration.netlify.app/](LInk).
 
 ## Contact
 
